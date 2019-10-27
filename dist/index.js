@@ -10,4 +10,4 @@ var app = (0, _express["default"])(); // Routes
 
 (0, _consign["default"])({
   cwd: __dirname
-}).then('routes').into(app);
+}).include('libs/config.js').then('db.js').then('libs/middlewares.js').then('routes').then('libs/boot.js').into(app);
